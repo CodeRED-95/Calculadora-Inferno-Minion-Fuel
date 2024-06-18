@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiales Totales</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/total_styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='Gabagool.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <h1>Materiales Totales</h1>
+    <div class="material-list">
+        {{ materials_html|safe }}
+    </div>
+    <form action="/available" method="get">
+        <button type="submit" class="update-button">Ingresar Materiales Disponibles</button>
+    </form>
+    <p><a href="/" class="back-button">Volver</a></p>
+
+</body>
+</html>

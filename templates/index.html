@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Inferno Minion Fuel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index_styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <h1>Calculadora de Inferno Minion Fuel</h1>
+    <div class="container">
+        <div class="quantity-input">
+            <label for="quantity">Cantidad de Inferno Minion Fuel:</label>
+            <input type="number" id="quantity" name="quantity" value="{{ session.get('quantity', 1) }}" required>
+        </div>
+        <form action="/calculate" method="post" id="calculate-form">
+            <button type="submit">Calcular Materiales</button>
+        </form>
+        <form action="/total" method="post" id="total-form">
+            <button type="submit">Mostrar Total de Materiales</button>
+        </form>
+    </div>
+
+    <a href="https://sky.shiiyu.moe/stats/CodeRed95/Tomato" class="developer-section">
+        <img src="{{ url_for('static', filename='images/developer.png') }}" alt="Developer">
+        <div>
+            <h2>CodeRED95</h2>
+        </div>
+    </a>
+
+    <a href="https://discord.gg/example" class="discord-button">Únete a nuestro Discord</a>
+
+    <script>
+        // Copiar la cantidad al enviar los formularios
+        document.getElementById("calculate-form").addEventListener("submit", function() {
+            var quantity = document.getElementById("quantity").value;
+            this.appendChild(createHiddenField("quantity", quantity));
+        });
+
+        document.getElementById("total-form").addEventListener("submit", function() {
+            var quantity = document.getElementById("quantity").value;
+            this.appendChild(createHiddenField("quantity", quantity));
+        });
+
+        function createHiddenField(name, value) {
+            var input = document.createElement("input");
+            input.type = "hidden";
+            input.name = name;
+            input.value = value;
+            return input;
+        }
+    </script>
+</body>
+</html>

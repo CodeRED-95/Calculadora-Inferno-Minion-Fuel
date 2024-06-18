@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de la Calculadora</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/result_styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <div class="header">
+        <h1>Resultados de la Calculadora</h1>
+    </div>
+    <div class="container">
+        <ul class="materials-list">
+            {{ materials_html|safe }}
+        </ul>
+    </div>
+    <a href="/" class="back-button">Volver</a>
+
+    <!-- JavaScript para manejar la expansión y contracción de los elementos -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const expandButtons = document.querySelectorAll('.expand-button');
+            expandButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        if (targetElement.classList.contains('hidden')) {
+                            targetElement.classList.remove('hidden');
+                            targetElement.classList.add('visible');
+                            this.textContent = 'Contraer';
+                        } else {
+                            targetElement.classList.remove('visible');
+                            targetElement.classList.add('hidden');
+                            this.textContent = 'Expandir';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

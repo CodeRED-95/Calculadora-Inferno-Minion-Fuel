@@ -1,0 +1,153 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('/static/images/background.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    margin-top: 50px;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px #000;
+}
+
+form {
+    margin: 20px auto;
+    text-align: center;
+    max-width: 600px;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    margin: 20px auto;
+    width: 80%;
+    max-width: 800px;
+    color: #fff;
+}
+
+form label {
+    font-size: 1.5em;
+}
+
+form input, form button {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+a {
+    text-align: center;
+    display: block;
+    margin: 20px auto;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+.developer-section {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    justify-content: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    margin: 30px auto;
+    max-width: 600px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.developer-section:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.developer-section img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+}
+
+.developer-section div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.developer-section h2, .developer-section p {
+    margin: 0;
+    text-align: left;
+}
+
+.discord-button {
+    display: block;
+    width: 50%;
+    margin: 30px auto;
+    padding: 15px;
+    background-color: #7289da;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.discord-button:hover {
+    background-color: #5b6eae;
+}
+
+
+.quantity-input {
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quantity-input label {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.quantity-input input {
+    font-size: 1.2em;
+    padding: 10px;
+    width: 100px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+}

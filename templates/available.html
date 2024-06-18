@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiales Disponibles</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/available_styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <div class="header">
+        <h1>Materiales Disponibles</h1>
+    </div>
+    <form action="/available" method="post" class="available-form">
+        <div class="materials-container">
+            {% for material in materials %}
+            <div class="material-item">
+                <img src="{{ url_for('static', filename='images/materials/' + material + ('.gif' if material in ['Enchanted Coal', 'Enchanted Sulphur'] else '.png')) }}" alt="{{ material }}" class="material-image">
+                <div class="material-info">
+                    <label for="{{ material }}" class="material-label">{{ material }}:</label>
+                    <input type="number" id="{{ material }}" name="{{ material }}" value="{{ available_materials.get(material, 0) }}" step="0.01" class="material-input">
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="button-container">
+            <button type="submit" class="update-button">Actualizar</button>
+        </div>
+    </form>
+    <a href="/" class="back-button">Volver</a>
+</body>
+</html>
