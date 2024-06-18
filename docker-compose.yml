@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  web:
+    image: python:3.10-slim
+    container_name: calculadora-inferno-minion-fuel
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: flask run --host=0.0.0.0
+    environment:
+      FLASK_APP: app.py
+      FLASK_ENV: production
+      SECRET_KEY: your_secret_key  # Reemplaza con tu clave secreta
+    depends_on:
+      - redis
+
+  redis:
+    image: "redis:alpine"
+    container_name: redis-container
+
+volumes:
+  data:
